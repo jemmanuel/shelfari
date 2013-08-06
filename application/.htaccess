@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteBase /
+
+#ignored folders/files
+RewriteCond $1 !^(index\.php|robots\.txt|img/|css/|js/)
+
+RewriteRule ^(.*)$ index.php?/$1 [L] 
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
